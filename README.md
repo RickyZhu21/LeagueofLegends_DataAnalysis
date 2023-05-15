@@ -8,11 +8,12 @@ Throughout our gaming experience League of Legends, we are interested on the que
 
 To answer the question, we used the dataset contains contains 2022 League of Legends eSports match data from OraclesElixir, as it's representative for the League of Legends player population and meta for 2022. Also it provides valuable insights into the performance and dynamics of professional teams in the game for the future. Analyzing this dataset can offer a deeper understanding of the strategies, strengths, and weaknesses of different roles within a team.
 
-By examining the match data from 2022, we can provide evidence-based conclusions about the impact and effectiveness of top and mid laners in carrying their teams to victory.
+By examining the match data from 2022, we can provide evidence-based conclusions about the impact and effectiveness of top and mid laners in carrying their teams to victory. 
 
 **2022 League of Legends eSports match data from OraclesElixir dataset breakdown:**
 
 Rows: Each League of Legends competitive match in 2022. 
+
 Number of rows: 149400
 
 **Relevant Columns:**
@@ -28,6 +29,7 @@ Number of rows: 149400
 10. standardized_gpm: Earned gold per minute by player in a single game, standardized
 11. standardized_cspm: Creep score per minute, indicating the number of minion killed by a player per minute, standardized. 
 12. **carry_score**: Our measurement of how well a player perform in a game, calculated by **(standardized_kda + standardized_gpm + standardized_cspm) / 3**. 
+
 
 
 
