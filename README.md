@@ -12,7 +12,7 @@ By examining the match data from 2022, we can provide evidence-based conclusions
 
 **2022 League of Legends eSports match data from OraclesElixir dataset breakdown:**
 
-Rows: Each League of Legends competitive match in 2022. 
+Rows: Each League of Legends eSports match in 2022. 
 
 Number of rows: 149400
 
