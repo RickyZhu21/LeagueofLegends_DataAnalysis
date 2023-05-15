@@ -1,5 +1,5 @@
 # LeagueofLegends_DataAnalysis
-This is a project for DSC 80 at UCSD, analyzing which role impacts League of Legends Esports Match more: Top or Mid using official 2022 LoL eSports match data. 
+This is a cool project for DSC 80 at UCSD, analyzing which role impacts League of Legends Esports Match more: Top or Mid using official 2022 LoL eSports match data. 
 
 # Introduction
 League of Legends (LoL) is a highly popular and competitive multiplayer online battle arena (MOBA) game developed and published by Riot Games. With a massive player base worldwide, LoL has become a staple in the eSports industry. Players assume the roles of powerful champions, forming teams and battling against each other in intense strategic matches. The game features a vast roster of unique champions, each with their own abilities and playstyles, providing endless possibilities for dynamic gameplay and strategic depth. 
