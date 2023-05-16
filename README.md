@@ -86,6 +86,7 @@ Pivot Table showing respective mean standardized KDA, GPM, CSPM, and carry score
 ```
 print(league_position.to_markdown(index=True))
 ```
+
 | position   |   standardized_kda |   standardized_gpm |   standardized_cspm |   carry_score |
 |:-----------|-------------------:|-------------------:|--------------------:|--------------:|
 | bot        |         0.122206   |           0.798652 |            0.793597 |      0.571485 |
@@ -93,6 +94,7 @@ print(league_position.to_markdown(index=True))
 | mid        |         0.0684821  |           0.430029 |            0.625648 |      0.37472  |
 | sup        |        -0.0218033  |          -1.35438  |           -1.67982  |     -1.01867  |
 | top        |        -0.174883   |           0.321859 |            0.489504 |      0.21216  |
+
 # Assessment of Missingness
 ## NMAR Analysis
 NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between datacompleteness and missingness in teamname column, as our "teamname" column is the important column that contains missing values. 
