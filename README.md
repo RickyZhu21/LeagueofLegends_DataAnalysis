@@ -58,6 +58,9 @@ with True. This process makes the column boolean, to present a much cleaner data
 8. Drops non-standardized columns, using standarized columns for future analysis. 
 
 **Cleaned Data**: 
+```
+print(league_head.to_markdown(index=False))
+```
 
 | datacompleteness   | teamname                 | position   |   standardized_kda |   standardized_gpm |   standardized_cspm |   carry_score |
 |:-------------------|:-------------------------|:-----------|-------------------:|-------------------:|--------------------:|--------------:|
@@ -68,8 +71,28 @@ with True. This process makes the column boolean, to present a much cleaner data
 | True               | Fredit BRION Challengers | sup        |          -0.675285 |          -1.45253  |           -1.57038  |    -1.23273   |
 
 ## Univariate Analysis
+The distribution of the standarized KDA among players: x-axis describes the KDA ratio for players in standardized units, ranging from -1 to 8,  y-axis describes the amount of players with their specific standardized KDA. 
+The graph is skewed to the right, inferring that most player's standardized KDA is in the range of -1 to 0 standardized units, which implies that many player's KDA is relatively lower compared to the mean KDA within the dataset. 
 <iframe src="assets/univariate2.html" width=800 height=600 frameBorder=0></iframe>
 
+## Bivariate Analysis
+Boxplot showing various information on all positions and their carry score, including median, interquartile range, and outlier. The x axis shows carry score in standardized units, and the y axis labels each of the five positions. While top laners and mid laners have similar carry score distribution, mid laners' scores are a little higher overall. 
+* Interestingly, carry score tend to have more outliers when carry score is high.
+
+<iframe src="assets/boxplot1.html.html" width=800 height=600 frameBorder=0></iframe>
+
+## Interesting Aggregates
+Pivot Table showing respective mean standardized KDA, GPM, CSPM, and carry score. It demonstrates the mean statistics for each position in League of Legends and can be used for comparison among different positions. For example, bot laners has the highest KDA, GPM, CSPM, and carry score in standardized units among all other positions.
+```
+print(league_position.to_markdown(index=True))
+```
+| position   |   standardized_kda |   standardized_gpm |   standardized_cspm |   carry_score |
+|:-----------|-------------------:|-------------------:|--------------------:|--------------:|
+| bot        |         0.122206   |           0.798652 |            0.793597 |      0.571485 |
+| jng        |         0.00599775 |          -0.196162 |           -0.22893  |     -0.139698 |
+| mid        |         0.0684821  |           0.430029 |            0.625648 |      0.37472  |
+| sup        |        -0.0218033  |          -1.35438  |           -1.67982  |     -1.01867  |
+| top        |        -0.174883   |           0.321859 |            0.489504 |      0.21216  |
 # Assessment of Missingness
 
 # Hypothesis Testing
