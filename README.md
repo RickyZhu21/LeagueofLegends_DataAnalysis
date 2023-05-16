@@ -55,6 +55,17 @@ with True. This process makes the column boolean, to present a much cleaner data
 
 8. Drops non-standardized columns, using standarized columns for future analysis. 
 
+**Cleaned Data**: 
+
+| datacompleteness   | teamname                 | position   |   standardized_kda |   standardized_gpm |   standardized_cspm |   carry_score |
+|:-------------------|:-------------------------|:-----------|-------------------:|-------------------:|--------------------:|--------------:|
+| True               | Fredit BRION Challengers | top        |          -0.696223 |           0.242621 |            0.563221 |     0.0365397 |
+| True               | Fredit BRION Challengers | jng        |          -0.633408 |          -0.47272  |           -0.37376  |    -0.493296  |
+| True               | Fredit BRION Challengers | mid        |          -0.507778 |          -0.242903 |            0.134244 |    -0.205479  |
+| True               | Fredit BRION Challengers | bot        |          -0.759038 |           0.111582 |            0.506755 |    -0.0469004 |
+| True               | Fredit BRION Challengers | sup        |          -0.675285 |          -1.45253  |           -1.57038  |    -1.23273   |
+
+
 
 # Assessment of Missingness
 
