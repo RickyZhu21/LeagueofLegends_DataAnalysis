@@ -109,7 +109,7 @@ Our first permutation testing: We test if "datacompleteness" columns depends on 
 
 Our next permutation testing is : We test if "position" columns depends on "teamname" or not.
 1. We computed the p-value by comparing the simulated TVD's from the permutation testing to the observed TVD.
-2. After obtaining the our p-value for this permutation testing: 0.00, we fail to reject the null hypothesis: In year 2022, distribution of "position" column when "teamname" is missing is the same as when "teamname" is not missing. The result of this permutation leads to MCAR, "position" does not depend on "teamname" missingness. 
+2. After obtaining the our p-value for this permutation testing: 1.00, we fail to reject the null hypothesis: In year 2022, distribution of "position" column when "teamname" is missing is the same as when "teamname" is not missing. The result of this permutation leads to MCAR, "position" does not depend on "teamname" missingness. 
 <iframe src="assets/missingness_pos_perm.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/position_new_perm.html" width=800 height=600 frameBorder=0></iframe>
 
