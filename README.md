@@ -100,10 +100,34 @@ print(league_position.to_markdown(index=True))
 NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between datacompleteness and missingness in teamname column, as our "teamname" column is one of the column that contains missing values. 
 
 ## Missingness Dependency
-We 
+We performed permutation tests to check whether "teamname" column depends on other columns
+Our first permutation testing: We test if "datacompleteness" columns depends on "teamname" or not. 
+We computed the p-value by comparing the simulated TVD's from the permutation testing to the observed TVD.
+After obtaining the our p-value for this permutation testing: 0.004, we reject the null hypothesis: In year 2022, distribution of "datacompleteness" when "teamname" is missing is not same as when "teamname" is not missing. The result of this permutation leads to MAR, "datacompleteness" depend on "teamname" missingness. 
 <iframe src="assets/missingness_perm.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/datacompleteness_perm.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/datacompleteness_new_perm.html" width=800 height=600 frameBorder=0></iframe>
+
+Our next permutation testing is : We test if "position" columns depends on "teamname" or not.
+We computed the p-value by comparing the simulated TVD's from the permutation testing to the observed TVD.
+After obtaining the our p-value for this permutation testing: 0.00, we fail to reject the null hypothesis: In year 2022, distribution of "position" column when "teamname" is missing is the same as when "teamname" is not missing. The result of this permutation leads to MCAR, "position" does not depend on "teamname" missingness. 
 <iframe src="assets/missingness_pos_perm.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/position_perm.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/position_new_perm.html" width=800 height=600 frameBorder=0></iframe>
 
 # Hypothesis Testing
+We are focused on the following question: Which role “carries” (does the best) in their team more often: Top (top) or Mid laners(mid)?" using permutation testing. 
+
+Null hypothesis: Top carries(does the best) in their team as the same as the mid laners(mid). 
+
+Alternative hypothesis: Mid carries (does the best) in their team more often than top, as we observed from the boxplot in bivariate analysis such that the observed carry score for Mid laner is higher than Top laners in general. 
+
+Choice of test statistic: Difference in group means of carry_score between Top laners and Mid laners, as the distribution of carry score between Top laners and Mid laners are similar shapes, but shifted version of each other demonstrated in the graph below. 
+
+<iframe src="assets/hypothesis_stat.html" width=800 height=600 frameBorder=0></iframe>
+
+Significance Level: 0.05 significance level. We use 0.05 as our significance level as it's widely used in many hypothesis testing. 
+
+Result p-value: 0.0, from our permutation testing. 
+
+Conclusion: We reject the null hypothesis, which suggests that Mid laners might possibly carry (do the best) in their team more often than top. This rejection is based on our statistical analysis, specifically the calculation of the p-value, which is a measure of the likelihood of obtaining a result as extreme as, or more extreme than, the one observed if the null hypothesis were true. In our case, the obtained p-value is less than the commonly used significance level of 0.05 (0.0 < 0.05), indicating that the observed result is statistically significant.
+
+However, it is important to consider the limitations of our study, such as the specific context, sample size, and potential confounding variables, when interpreting these results. Further research and analysis may be warranted to gain a deeper understanding of the relationship between Mid laners and their impact on team performance.
