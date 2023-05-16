@@ -126,8 +126,10 @@ Choice of test statistic: Difference in group means of carry_score between Top l
 
 Significance Level: 0.05 significance level. We use 0.05 as our significance level as it's widely used in many hypothesis testing. 
 
-Result p-value: 0.0, from our permutation testing. 
+Result p-value: 0.0, from our permutation testing. We calculate p-value by computing the proportion of simulated difference in group means from the permutation testing that are smaller than the observed difference in group means.
+
+<iframe src="assets/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
 
 Conclusion: We reject the null hypothesis, which suggests that Mid laners might possibly carry (do the best) in their team more often than top. This rejection is based on our statistical analysis, specifically the calculation of the p-value, which is a measure of the likelihood of obtaining a result as extreme as, or more extreme than, the one observed if the null hypothesis were true. In our case, the obtained p-value is less than the commonly used significance level of 0.05 (0.0 < 0.05), indicating that the observed result is statistically significant.
 
-However, it is important to consider the limitations of our study, such as the specific context, sample size, and potential confounding variables, when interpreting these results. Further research and analysis may be warranted to gain a deeper understanding of the relationship between Mid laners and their impact on team performance.
+However, it is important to consider the limitations of our study, such as the specific context, sample size, and potential confounding variables, when interpreting these results. Further research and analysis may be warranted to gain a deeper understanding between Mid laners and Top laners about their impact on team performance.
