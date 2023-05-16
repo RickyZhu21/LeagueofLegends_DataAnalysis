@@ -79,7 +79,7 @@ The graph is skewed to the right, inferring that most player's standardized KDA 
 Boxplot showing various information on all positions and their carry score, including median, interquartile range, and outlier. The x axis shows carry score in standardized units, and the y axis labels each of the five positions. While top laners and mid laners have similar carry score distribution, mid laners' scores are a little higher overall. 
 * Interestingly, carry score tend to have more outliers when carry score is high.
 
-<iframe src="assets/boxplot1.html.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/boxplot1.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Interesting Aggregates
 Pivot Table showing respective mean standardized KDA, GPM, CSPM, and carry score. It demonstrates the mean statistics for each position in League of Legends and can be used for comparison among different positions. For example, bot laners has the highest KDA, GPM, CSPM, and carry score in standardized units among all other positions.
@@ -94,5 +94,14 @@ print(league_position.to_markdown(index=True))
 | sup        |        -0.0218033  |          -1.35438  |           -1.67982  |     -1.01867  |
 | top        |        -0.174883   |           0.321859 |            0.489504 |      0.21216  |
 # Assessment of Missingness
+## NMAR Analysis
+NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between datacompleteness and missingness in teamname column, as our "teamname" column is the important column that contains missing values. 
+
+## Missingness Dependency
+We 
+<iframe src="assets/missingness_perm.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/datacompleteness_perm.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/missingness_pos_perm.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/position_perm.html" width=800 height=600 frameBorder=0></iframe>
 
 # Hypothesis Testing
