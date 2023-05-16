@@ -97,7 +97,7 @@ print(league_position.to_markdown(index=True))
 
 # Assessment of Missingness
 ## NMAR Analysis
-NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between datacompleteness and missingness in teamname column, as our "teamname" column is the important column that contains missing values. 
+NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between datacompleteness and missingness in teamname column, as our "teamname" column is one of the column that contains missing values. 
 
 ## Missingness Dependency
 We 
