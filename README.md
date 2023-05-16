@@ -1,5 +1,6 @@
 # League_of_Legends_Data_Analysis
 By Ricky Zhu(r2zhu@ucsd.edu) and Tony Guo(xig003@ucsd.edu)
+![Image not found](images/lol.png)
 
 # Introduction
 **League of Legends (LoL)** is a highly popular and competitive multiplayer online battle arena (**MOBA**) game developed and published by Riot Games. With a massive player base worldwide, LoL has become a staple in the eSports industry. Players assume the roles of powerful champions, forming teams and battling against each other in intense strategic matches. The game features a vast roster of unique champions, each with their own abilities and playstyles, providing endless possibilities for dynamic gameplay and strategic depth. 
