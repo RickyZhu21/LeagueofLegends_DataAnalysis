@@ -67,7 +67,8 @@ with True. This process makes the column boolean, to present a much cleaner data
 | True               | Fredit BRION Challengers | bot        |          -0.759038 |           0.111582 |            0.506755 |    -0.0469004 |
 | True               | Fredit BRION Challengers | sup        |          -0.675285 |          -1.45253  |           -1.57038  |    -1.23273   |
 
-
+## Univariate Analysis
+<iframe src="assets/univariate2.html" width=800 height=600 frameBorder=0></iframe>
 
 # Assessment of Missingness
 
