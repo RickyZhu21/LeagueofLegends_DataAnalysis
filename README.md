@@ -115,7 +115,7 @@ Our first permutation testing: **We test if "datacompleteness" columns depends o
 1. We computed the p-value by comparing the simulated TVD's from the permutation testing to the observed TVD.
 2. We get the p-value by computing the proportion of simulated total variation distances that are bigger than the observed total variation distance.
 3. After obtaining the our p-value for this permutation testing: 0.004, we reject the null hypothesis: In year 2022, distribution of "datacompleteness" when "teamname" is missing is not same as when "teamname" is not missing. 
-4. The result of this permutation leads to **MAR, missingness in "teamname" column does depend on "datacompleteness" column.** column , when it is analyzed with and only with datacompleteness column.
+4. The result of this permutation leads to **MAR, missingness in "teamname" column does depend on "datacompleteness" column**, when it is analyzed with and only with datacompleteness column.
 <iframe src="assets/missingness_perm.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/datacompleteness_new_perm.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -123,7 +123,7 @@ Our next permutation testing is : **We test if "position" column depends on "tea
 1. We computed the p-value by comparing the simulated TVD's from the permutation testing to the observed TVD.
 2. We get the p-value by computing the proportion of simulated total variation distances that are bigger than the observed total variation distance.
 3. After obtaining the our p-value for this permutation testing: 1.00, we fail to reject the null hypothesis: In year 2022, distribution of "position" column when "teamname" is missing is the same as when "teamname" is not missing.
-4. The result of this permutation leads to **MCAR, missingness in "teamname" column does not depend on "position" column.**, when it is analyzed with and only with position column.
+4. The result of this permutation leads to **MCAR, missingness in "teamname" column does not depend on "position" column**, when it is analyzed with and only with position column.
 <iframe src="assets/missingness_pos_perm.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/position_new_perm.html" width=800 height=600 frameBorder=0></iframe>
 
