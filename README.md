@@ -140,7 +140,7 @@ We are focused on the following question: **Which role “carries” (does the b
 * We set such an alternative hypothesis because from the boxplot shown above, we tend to favor a little more about the assumption that Mid laners might carry more than the Top laners because they have a higher overall carry score. Our alternative hypothesis also avoids two-sided tests.
 
 ## Choice of Test Statistic
-**Choice of test statistic**: Difference in group means of carry_score between Top laners and Mid laners, as the distribution of carry score between Top laners and Mid laners are similar shapes, but shifted version of each other demonstrated in the graph below. 
+**Choice of test statistic**: Difference in group means of carry score between Top laners and Mid laners, as the distribution of carry score between Top laners and Mid laners are similar shapes, but shifted version of each other demonstrated in the graph below. 
 
 <iframe src="assets/hypothesis_stat.html" width=800 height=600 frameBorder=0></iframe>
 
