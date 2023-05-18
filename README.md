@@ -47,22 +47,22 @@ We created a copy of the original dataframe to keep original dataframe intact.
 
 Pattern: Each 1-10 rows contains individual player's statistic in a single match, and every 11th and 12th contains the team's statistics in a single match. (5 players versus 5 players, 2 teams)
 ## Data Cleaning
-1. Remove row contains position == team, to keep individual positions(top, mid,etc)
+1. Remove row contains position == team, to only keep individual positions(top, mid,etc)
 
 2. Keep only relevant columns from of the dataframe described from above.
 
-3. Replace the column "teamname" of values such as "unknown team" to np.NaN, as "unknown team" should be considered as missing data.
+3. After examination of original file, we see that the ‘teamname’ column initially have NaN values and also a kind of values called **“unknown team”.** We replace them with **NaN** to clean the data.
 
 4. The datacompleteness column contains 3 types: complete, ignore, and partial. We replace ignore and partial with False, and replace complete
 with True. This process makes the column boolean, to present a much cleaner data. 
 
 5. Adding a column kda_ratio: KDA ratio is Kill Death Assist Ratio by a player in a single game, calculated using the formula **(Kill+Assist) / Death**. 
 
-6. Standardize the kda_ratio, cspm, and earned gpm column and create 3 new columns: **standardized_kda, standardized_gpm, standardized_cspm**
+6. Standardize the kda_ratio, cspm, and earned gpm column and create 3 new columns: **standardized_kda, standardized_gpm, standardized_cspm**. Unstandardized GPM is provided in original file directly.
 
-7. Adds a new column named **carry_score**: For our analysis, we calculate a score for every player called 'carry_score'. Our self designed measurement of how well a player performs in a game, calculated by **(standardized_kda + standardized_gpm + standardized_cspm) / 3**. The reason why we use these three statistics is that these three factors impact the development of a League character the most. The higher the three statistics are, the better a player's possible performance would be in various aspects such as the amount of damage dealt or the quality of a player's items equipped. Also, these three statistics are the most crucial factors in determining which player is the Most Valuable Player(i.e. MVP) in a single match.
+7. Adds a new column named **carry_score**: For our analysis, we calculate a score for every player called 'carry_score'. Our self designed measurement of how well a player performs in a game, calculated by **(standardized_kda + standardized_gpm + standardized_cspm) / 3**. The reason why we use these three statistics is that these three factors impact the development of a League character the most. The higher the three statistics are, the better a player's possible performance would be in various aspects such as the amount of damage dealt or the quality of a player's items equipped. Also, these three statistics are the most crucial factors in determining which player is the **Most Valuable Player(i.e. MVP)** in a single match.
 
-8. Drops non-standardized columns, using standarized columns for future analysis. 
+8. We then drop non-standardized columns, using standarized columns for future analysis. 
 
 **Cleaned Data**: 
 ```
@@ -77,19 +77,20 @@ print(league_head.to_markdown(index=False))
 | True               | Fredit BRION Challengers | bot        |          -0.759038 |           0.111582 |            0.506755 |    -0.0469004 |
 | True               | Fredit BRION Challengers | sup        |          -0.675285 |          -1.45253  |           -1.57038  |    -1.23273   |
 
-## Univariate Analysis
-**The distribution of the standarized KDA among players**: x-axis describes the KDA ratio for players in standardized units, ranging from -1 to 8,  y-axis describes the amount of players with their specific standardized KDA. 
-The graph is skewed to the right, inferring that most player's standardized KDA is in the range of -1 to 0 standardized units, which implies that many player's KDA is relatively lower compared to the mean KDA within the dataset. 
+## Distribution of the Standarized KDA Among Players##
+In the below histogram, the x-axis describes the KDA ratio for players in standardized units, ranging from -1 to 8. The y-axis describes the frequency of players with specific standardized KDA levels. We set the bin size of 0.5 standardized units for better data visualization.
+
+The graph is skewed to the right, inferring that most player's standardized KDA is in the range of -1 to 0 standardized units, which implies that many player's KDA is relatively lower compared to the mean KDA within the dataset. There is a huge difference between players and their standardized KDA.
 <iframe src="assets/univariate2.html" width=800 height=600 frameBorder=0></iframe>
 
-## Bivariate Analysis
-**Boxplot showing various information on all positions and their carry score**, including median, interquartile range, and outlier. The x axis shows carry score in standardized units, and the y axis labels each of the five positions. While top laners and mid laners have similar carry score distribution, mid laners' scores are a little higher overall. 
-* Interestingly, carry score tend to have more outliers when carry score is high.
+## Bivariate Analysis About Carry Score Among All Player Positions.
+**Boxplot showing various information on all positions and their carry score**, including median, interquartile range, and outlier. The x-axis shows carry score in standardized units, and the y-axis labels each of the five positions. While top laners and mid laners have similar carry score distribution, mid laners' scores are a little higher overall. 
+* Interestingly, carry score tend to have more outliers when carry score is high among all positions.
 
 <iframe src="assets/boxplot1.html" width=800 height=600 frameBorder=0></iframe>
 
-## Interesting Aggregates
-**Pivot Table showing respective mean standardized KDA, GPM, CSPM, and carry score**. It demonstrates the mean statistics for each position in League of Legends and can be used for comparison among different positions. For example, bot laners has the highest KDA, GPM, CSPM, and carry score in standardized units among all other positions.
+## Pivot Table
+**The following pivot table showing respective mean standardized KDA, GPM, CSPM, and carry score**. It demonstrates the mean statistics for each position in League of Legends and can be used for comparison among different positions. Also, it provides a more specific numerical illustration of the five positions. For example, mid and top are the two positions with the smallest difference in mean standardized carry score.
 ```
 print(league_position.to_markdown(index=True))
 ```
@@ -106,19 +107,23 @@ print(league_position.to_markdown(index=True))
 
 # Assessment of Missingness
 ## NMAR Analysis
-NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between datacompleteness and missingness in teamname column, as the **"teamname"** column is one of the column in this dataset that contains missing values. 
+NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between **datacompleteness** and **position** column and missingness in teamname column, as the **"teamname"** column is one of the column in this dataset that contains missing values. 
 
 ## Missingness Dependency
 We performed permutation tests to check whether "teamname" column depends on other columns.
 Our first permutation testing: **We test if "datacompleteness" columns depends on "teamname" or not.** 
 1. We computed the p-value by comparing the simulated TVD's from the permutation testing to the observed TVD.
-2. After obtaining the our p-value for this permutation testing: 0.004, we reject the null hypothesis: In year 2022, distribution of "datacompleteness" when "teamname" is missing is not same as when "teamname" is not missing. The result of this permutation leads to **MAR, "datacompleteness" depend on "teamname" missingness.**
+2. We get the p-value by computing the proportion of simulated total variation distances that are bigger than the observed total variation distance.
+3. After obtaining the our p-value for this permutation testing: 0.004, we reject the null hypothesis: In year 2022, distribution of "datacompleteness" when "teamname" is missing is not same as when "teamname" is not missing. 
+4. The result of this permutation leads to **MAR, missingness in "teamname" column does depend on "datacompleteness" column.** column , when it is analyzed with and only with datacompleteness column.
 <iframe src="assets/missingness_perm.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/datacompleteness_new_perm.html" width=800 height=600 frameBorder=0></iframe>
 
-Our next permutation testing is : **We test if "position" columns depends on "teamname" or not.**
+Our next permutation testing is : **We test if "position" column depends on "teamname" or not.**
 1. We computed the p-value by comparing the simulated TVD's from the permutation testing to the observed TVD.
-2. After obtaining the our p-value for this permutation testing: 1.00, we fail to reject the null hypothesis: In year 2022, distribution of "position" column when "teamname" is missing is the same as when "teamname" is not missing. The result of this permutation leads to **MCAR, "position" does not depend on "teamname" missingness.**
+2. We get the p-value by computing the proportion of simulated total variation distances that are bigger than the observed total variation distance.
+3. After obtaining the our p-value for this permutation testing: 1.00, we fail to reject the null hypothesis: In year 2022, distribution of "position" column when "teamname" is missing is the same as when "teamname" is not missing.
+4. The result of this permutation leads to **MCAR, missingness in "teamname" column does not depend on "position" column.**, when it is analyzed with and only with position column.
 <iframe src="assets/missingness_pos_perm.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/position_new_perm.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -127,21 +132,30 @@ Our next permutation testing is : **We test if "position" columns depends on "te
 # Hypothesis Testing
 We are focused on the following question: **Which role “carries” (does the best) in their team more often: Top (top) or Mid laners(mid)?" using permutation testing.**
 
-**Null hypothesis**: Top carries(does the best) in their team as the same as the mid laners(mid). 
+## Null Hypothesis and Alternative Hypothesis
+**Null hypothesis**: Top carries(does the best) in their team as likely as the mid laners(mid). Any observed difference in their respective likelihood of carrying the team is due to random chance.
 
 **Alternative hypothesis**: Mid carries (does the best) in their team more often than top, as we observed from the boxplot in bivariate analysis such that the observed carry score for Mid laner is higher than Top laners in general. 
 
+* We set such an alternative hypothesis because from the boxplot shown above, we tend to favor a little more about the assumption that Mid laners might carry more than the Top laners because they have a higher overall carry score. Our alternative hypothesis also avoids two-sided tests.
+
+## Choice of Test Statistic
 **Choice of test statistic**: Difference in group means of carry_score between Top laners and Mid laners, as the distribution of carry score between Top laners and Mid laners are similar shapes, but shifted version of each other demonstrated in the graph below. 
 
 <iframe src="assets/hypothesis_stat.html" width=800 height=600 frameBorder=0></iframe>
 
-**Significance Level**: 0.05 significance level. We use 0.05 as our significance level as it's widely used in many hypothesis testing. 
+## Significance Level
+We use 0.05 as our significance level as it's widely used in many hypothesis testing. 
 
-**Result p-value**: 0.0, from our permutation testing. We calculate p-value by computing the proportion of simulated difference in group means from the permutation testing that are smaller than the observed difference in group means.
+## Result p-value
+ The result p-value is 0.0, from our permutation testing. 
 
 <iframe src="assets/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
 
-**Conclusion**: We **reject the null hypothesis, which suggests that Mid laners might possibly carry (do the best) in their team more often than top.** This rejection is based on our statistical analysis, specifically the calculation of the p-value, which is a measure of the likelihood of obtaining a result as extreme as, or more extreme than, the one observed if the null hypothesis were true. In our case, the obtained p-value is less than the commonly used significance level of 0.05 (0.0 < 0.05), indicating that the observed result is statistically significant.
+We calculate p-value by computing the proportion of simulated difference in group means from the permutation testing that are smaller than the observed difference in group means.
+
+## Conclusion
+We **reject the null hypothesis, which suggests that Mid laners might possibly carry (do the best) in their team more often than top.** This rejection is based on our statistical analysis, specifically the calculation of the p-value, which is a measure of the likelihood of obtaining a result as extreme as, or more extreme than, the one observed if the null hypothesis were true. In our case, the obtained p-value is less than the commonly used significance level of 0.05 (0.0 < 0.05), indicating that the observed result is statistically significant.
 
 However, it is important to consider the limitations of our study, such as the specific context, sample size, and potential confounding variables, when interpreting these results. Further research and analysis may be warranted to gain a deeper understanding between Mid laners and Top laners about their impact on team performance.
 
