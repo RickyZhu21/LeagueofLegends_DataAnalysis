@@ -11,32 +11,32 @@ Throughout our gaming experience League of Legends, we are interested on the que
     
 **Which role “carries” (does the best) in their team more often: Top (top) or Mid laners(mid)?**
 
-To answer the question, we used the dataset contains contains **2022 League of Legends eSports match data from OraclesElixir**, as it's representative for the League of Legends player population and meta for 2022. Also it provides valuable insights into the performance and dynamics of professional teams in the game for the future. Analyzing this dataset can offer a deeper understanding of the strategies, strengths, and weaknesses of different roles within a team.
+To answer the question, we used the dataset contains contains **2022 League of Legends eSports match data from** [OraclesElixir](https://oracleselixir.com/tools/downloads), as it's representative for the League of Legends player population and meta for 2022. Also it provides valuable insights into the performance and dynamics of professional teams in the game for the future. Analyzing this dataset can offer a deeper understanding of the strategies, strengths, and weaknesses of different roles within a team.
 
 By examining the match data from 2022, we can provide evidence-based conclusions about the impact and effectiveness of top and mid laners in carrying their teams to victory. **From our conclusion about which position carries more can motivate more players of League of Legends to become the main of that position**, for example: Faker motivated million of League of Legends players to become Mid mains when people watched how Faker outperforms and carries his team SKT/T1 as a mid laner. TheShy also motivated millions of League of Legends players to become Top mains when people watched how TheShy outperforms and carries his team IG as a top laner. 
 
 ### 2022 League of Legends eSports match data from OraclesElixir dataset breakdown:
 
-Rows: A League of Legends eSports player's match statistics in a single game in 2022. 
+**Rows**: A League of Legends eSports player's match statistics in a single game in 2022. 
 
-Number of rows: 149400
+**Number of rows**: 149400
 
 **Relevant Columns:**
-1. datacompleteness: Whether a player's data in a single eSport match is filled in original dataset before we did data cleaning.
+1. **datacompleteness**: Whether a player's data in a single eSport match is filled in original dataset before we did data cleaning.
 
-2. teamname: The name of the team the player is in.
+2. **teamname**: The name of the team the player is in.
 
-3. position: The player's position in a single eSport match. League of Legends only has five positions: Top Laner(top), Jungle(jng), Mid Laner(mid), Bot Laner(bot), Support for Bot Laner(sup). Note: In a League of Legends match, there are 3 lanes total and jungle areas. Top laner goes to top lane, Mid laners goes to mid lane, and Jungle clears Jungle area and potentially help other lanes. Bot Laners and Support goes bot lane. 
+3. **position**: The player's position in a single eSport match. League of Legends only has **five positions: Top Laner(top), Jungle(jng), Mid Laner(mid), Bot Laner(bot), Support for Bot Laner(sup).** Note: In a League of Legends match, there are 3 lanes total and jungle areas. Top laner goes to top lane, Mid laners goes to mid lane, and Jungle clears Jungle area and potentially help other lanes. Bot Laners and Support goes bot lane. 
 
-4. kills: The number of kills a player have in a single eSport match.
+4. **kills**: The number of kills a player have in a single eSport match.
 
-5. assists: The number of assists a player have in a single eSport match.
+5. **assists**: The number of assists a player have in a single eSport match.
 
-6. death: The number of deaths a player have in a single eSport match.
+6. **death**: The number of deaths a player have in a single eSport match.
 
-7. earned gpm: Earned gold per minute by player in a single game. In League of Legends, gold is used to buy items in order to make your league character stronger.
+7. **earned gpm**: Earned gold per minute by player in a single game. **In League of Legends, gold is used to buy items in order to make your league character stronger.**
 
-8. cspm: Creep score per minute, indicating the number of minions killed by a player per minute.
+8. **cspm**: Creep score per minute, indicating the number of minions killed by a player per minute.
 
 ---
 
