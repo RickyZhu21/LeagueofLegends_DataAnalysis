@@ -47,7 +47,7 @@ We created a copy of the original dataframe to keep original dataframe intact.
 
 Pattern: Each 1-10 rows contains individual player's statistic in a single match, and every 11th and 12th contains the team's statistics in a single match. (5 players versus 5 players, 2 teams)
 ## Data Cleaning
-1. Remove row contains position == team, to only keep individual positions(top, mid,etc)
+1. As our goal is to examine individual performances of top laners and mid laners, we drop all rows of whole teams. So we removed row contains position == team, to only keep individual positions(top, mid,etc)
 
 2. Keep only relevant columns from of the dataframe described from above.
 
