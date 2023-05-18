@@ -1,6 +1,8 @@
 # 2022 League of Legends Esports Match Data Analysis
 By Ricky Zhu(r2zhu@ucsd.edu) and Tony Guo(xig003@ucsd.edu)
+
 ---
+
 ![Image not found](images/lol.png)
 # Introduction
 **League of Legends (LoL)** is a highly popular and competitive multiplayer online battle arena (**MOBA**) game developed and published by Riot Games. With a massive player base worldwide, LoL has become a staple in the eSports industry. Players assume the roles of powerful champions, forming teams and battling against each other in intense strategic matches. The game features a vast roster of unique champions, each with their own abilities and playstyles, providing endless possibilities for dynamic gameplay and strategic depth. 
@@ -99,7 +101,9 @@ print(league_position.to_markdown(index=True))
 | mid        |         0.0684821  |           0.430029 |            0.625648 |      0.37472  |
 | sup        |        -0.0218033  |          -1.35438  |           -1.67982  |     -1.01867  |
 | top        |        -0.174883   |           0.321859 |            0.489504 |      0.21216  |
+
 ---
+
 # Assessment of Missingness
 ## NMAR Analysis
 NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between datacompleteness and missingness in teamname column, as the **"teamname"** column is one of the column in this dataset that contains missing values. 
@@ -140,4 +144,5 @@ We are focused on the following question: **Which role “carries” (does the b
 **Conclusion**: We **reject the null hypothesis, which suggests that Mid laners might possibly carry (do the best) in their team more often than top.** This rejection is based on our statistical analysis, specifically the calculation of the p-value, which is a measure of the likelihood of obtaining a result as extreme as, or more extreme than, the one observed if the null hypothesis were true. In our case, the obtained p-value is less than the commonly used significance level of 0.05 (0.0 < 0.05), indicating that the observed result is statistically significant.
 
 However, it is important to consider the limitations of our study, such as the specific context, sample size, and potential confounding variables, when interpreting these results. Further research and analysis may be warranted to gain a deeper understanding between Mid laners and Top laners about their impact on team performance.
+
 ---
