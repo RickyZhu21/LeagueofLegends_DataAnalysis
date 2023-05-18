@@ -77,13 +77,13 @@ print(league_head.to_markdown(index=False))
 | True               | Fredit BRION Challengers | bot        |          -0.759038 |           0.111582 |            0.506755 |    -0.0469004 |
 | True               | Fredit BRION Challengers | sup        |          -0.675285 |          -1.45253  |           -1.57038  |    -1.23273   |
 
-## Distribution of the Standarized KDA Among Players##
+## Distribution of the Standarized KDA Among Players
 In the below histogram, the x-axis describes the KDA ratio for players in standardized units, ranging from -1 to 8. The y-axis describes the frequency of players with specific standardized KDA levels. We set the bin size of 0.5 standardized units for better data visualization.
 
 The graph is skewed to the right, inferring that most player's standardized KDA is in the range of -1 to 0 standardized units, which implies that many player's KDA is relatively lower compared to the mean KDA within the dataset. There is a huge difference between players and their standardized KDA.
 <iframe src="assets/univariate2.html" width=800 height=600 frameBorder=0></iframe>
 
-## Bivariate Analysis About Carry Score Among All Player Positions.
+## Bivariate Analysis About Carry Score Among All Player Positions
 **Boxplot showing various information on all positions and their carry score**, including median, interquartile range, and outlier. The x-axis shows carry score in standardized units, and the y-axis labels each of the five positions. While top laners and mid laners have similar carry score distribution, mid laners' scores are a little higher overall. 
 * Interestingly, carry score tend to have more outliers when carry score is high among all positions.
 
