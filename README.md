@@ -107,7 +107,7 @@ print(league_position.to_markdown(index=True))
 
 # Assessment of Missingness
 ## NMAR Analysis
-NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR. We would like to obtain additional information about possible correlation between **datacompleteness** and **position** column and missingness in teamname column, as the **"teamname"** column is one of the column in this dataset that contains missing values. 
+NMAR means that there is a good reason why the missingness depends on the values of a column themselves. We don't believe there are any column in our dataset that is NMAR because we believed that the missingness of columns such as "teamname" depends on other columns in this dataset. In League of Legends, many variables can influence the missingness of columns in the dataset including the team roster changes, the type of professional competitions like regional playoffs versus world championship, incomplete games with unexpected technical difficulties, etc. We would like to obtain additional information about possible correlation between **datacompleteness** and **position** column and missingness in teamname column, as the **"teamname"** column is one of the column in this dataset that contains missing values. 
 
 ## Missingness Dependency
 We performed permutation tests to check whether "teamname" column depends on other columns.
