@@ -5,7 +5,9 @@ By Ricky Zhu(r2zhu@ucsd.edu) and Tony Guo(xig003@ucsd.edu)
 # Introduction
 **League of Legends (LoL)** is a highly popular and competitive multiplayer online battle arena (**MOBA**) game developed and published by Riot Games. With a massive player base worldwide, LoL has become a staple in the eSports industry. Players assume the roles of powerful champions, forming teams and battling against each other in intense strategic matches. The game features a vast roster of unique champions, each with their own abilities and playstyles, providing endless possibilities for dynamic gameplay and strategic depth. 
 
-Throughout our gaming experience League of Legends, we are interested on the question: **Which role “carries” (does the best) in their team more often: Top (top) or Mid laners(mid)?**
+Throughout our gaming experience League of Legends, we are interested on the question: 
+    
+**Which role “carries” (does the best) in their team more often: Top (top) or Mid laners(mid)?**
 
 To answer the question, we used the dataset contains contains **2022 League of Legends eSports match data from OraclesElixir**, as it's representative for the League of Legends player population and meta for 2022. Also it provides valuable insights into the performance and dynamics of professional teams in the game for the future. Analyzing this dataset can offer a deeper understanding of the strategies, strengths, and weaknesses of different roles within a team.
 
